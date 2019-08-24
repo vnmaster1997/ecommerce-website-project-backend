@@ -1,6 +1,8 @@
 import middleware from 'swagger-express-middleware';
 import * as path from 'path';
-import errorHandler from '../api/middlewares/error.handler';
+
+
+
 
 export default function (app, routes) {
   middleware(path.join(__dirname, 'api.yml'), app, (err, mw) => {
@@ -22,16 +24,18 @@ export default function (app, routes) {
       // rawFilesPath: false
     }));
 
-    app.use(mw.parseRequest({
-      // Configure the cookie parser to use secure cookies
-      cookie: {
-        secret: process.env.SESSION_SECRET,
-      },
-      // Don't allow JSON content over 100kb (default is 1mb)
-      json: {
-        limit: process.env.REQUEST_LIMIT,
-      },
-    }));
+    // app.use(mw.parseRequest({
+    //   // Configure the cookie parser to use secure cookies
+    //   cookie: {
+    //     secret: process.env.SESSION_SECRET,
+    //   },
+    //   // Don't allow JSON content over 100kb (default is 1mb)
+    //   json: {
+    //     limit: process.env.REQUEST_LIMIT,
+    //   },
+    // }));
+
+   
 
     // These two middleware don't have any options (yet)
     app.use(
@@ -42,6 +46,5 @@ export default function (app, routes) {
     routes(app);
 
     // eslint-disable-next-line no-unused-vars, no-shadow
-    app.use(errorHandler);
   });
 }

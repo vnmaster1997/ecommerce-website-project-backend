@@ -26,6 +26,8 @@ class ExamplesDatabase {
 
     return Promise.resolve(record);
   }
+
+  
 }
 
 export default new ExamplesDatabase();

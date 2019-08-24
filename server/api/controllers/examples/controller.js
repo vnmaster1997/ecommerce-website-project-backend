@@ -24,4 +24,6 @@ export class Controller {
         .json(r));
   }
 }
+
+
 export default new Controller();
