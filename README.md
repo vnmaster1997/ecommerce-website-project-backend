@@ -1,6 +1,12 @@
 <<<<<<< HEAD
 # x-commerce
-
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
 My cool app
 
 ## Get Started
